@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { ChevronDown } from "lucide-react";
 
-/* eslint-disable @next/next/no-img-element */
 export default function AccordionPage() {
   return (
     <div className="h-screen mt-[20vw]">
