@@ -33,6 +33,7 @@ export default function RootLayout({
           <Link href="/scroll">1. Scroll</Link>
           <Link href="/drawer">2. Drawer</Link>
           <Link href="/accordion">3. Accordion</Link>
+          <Link href="/responsive-variants">4. Responsive Variants</Link>
         </nav>
         {children}
       </body>
