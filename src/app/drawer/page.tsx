@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 export default function DrawerPage() {
   return (
-    <div className="h-screen grid place-items-center">
+    <>
       <dialog
         // Close the dialog if the user clicks outside of it
         onClick={(e) => {
@@ -25,19 +25,22 @@ export default function DrawerPage() {
           "backdrop:bg-black/20",
 
           // Position the dialog
-          "ml-auto mr-0 h-screen w-80 p-6 rounded-s-2xl",
+          "fixed left-auto right-0 h-dvh w-80 rounded-s-2xl p-6",
+
+          // Safari specifics
+          "max-h-none",
 
           // Enable transitions
-          "transition-all duration-200 ease-out transition-discrete",
+          "transition-all duration-300 ease-out transition-discrete",
 
           // Set initial position
-          "starting:open:translate-x-full shadow-none translate-x-full",
+          "starting:open:[transform:translateX(100%)] shadow-none translate-x-full",
 
           // Set open styles
           "open:shadow-2xl open:translate-x-0",
 
           // Animate backdrop opacity
-          "backdrop:transition-all backdrop:opacity-0 open:backdrop:opacity-100 starting:open:backdrop:opacity-0"
+          "backdrop:transition-opacity backdrop:duration-300 backdrop:opacity-0 open:backdrop:opacity-100 starting:open:backdrop:opacity-0"
         )}
       >
         <Button
@@ -53,10 +56,11 @@ export default function DrawerPage() {
           <Button>OK</Button>
         </form>
       </dialog>
-
-      <Button onClick={() => document.querySelector("dialog")?.showModal()}>
-        Open
-      </Button>
-    </div>
+      <div className="h-screen grid place-items-center">
+        <Button onClick={() => document.querySelector("dialog")?.showModal()}>
+          Open
+        </Button>
+      </div>
+    </>
   );
 }
