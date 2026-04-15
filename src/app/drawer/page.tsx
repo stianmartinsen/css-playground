@@ -7,19 +7,8 @@ export default function DrawerPage() {
   return (
     <>
       <dialog
-        // Close the dialog if the user clicks outside of it
-        onClick={(e) => {
-          const dialog = e.target as HTMLDialogElement;
-          const rect = dialog.getBoundingClientRect();
-          const isInDialog =
-            rect.top <= e.clientY &&
-            e.clientY <= rect.top + rect.height &&
-            rect.left <= e.clientX &&
-            e.clientX <= rect.left + rect.width;
-          if (!isInDialog) {
-            dialog.close();
-          }
-        }}
+        id="drawer"
+        closedby="any"
         className={classNames(
           // Style the backdrop
           "backdrop:bg-black/20",
@@ -34,19 +23,16 @@ export default function DrawerPage() {
           "transition-all duration-300 ease-out transition-discrete",
 
           // Set initial position
-          "starting:open:[transform:translateX(100%)] shadow-none translate-x-full",
+          "starting:open:transform-[translateX(100%)] shadow-none translate-x-full",
 
           // Set open styles
           "open:shadow-2xl open:translate-x-0",
 
           // Animate backdrop opacity
-          "backdrop:transition-opacity backdrop:duration-300 backdrop:opacity-0 open:backdrop:opacity-100 starting:open:backdrop:opacity-0"
+          "backdrop:transition-opacity backdrop:duration-300 backdrop:opacity-0 open:backdrop:opacity-100 starting:open:backdrop:opacity-0",
         )}
       >
-        <Button
-          autoFocus
-          onClick={() => document.querySelector("dialog")?.close()}
-        >
+        <Button autoFocus command="close" commandfor="drawer">
           Close
         </Button>
 
@@ -57,7 +43,7 @@ export default function DrawerPage() {
         </form>
       </dialog>
       <div className="h-screen grid place-items-center">
-        <Button onClick={() => document.querySelector("dialog")?.showModal()}>
+        <Button command="show-modal" commandfor="drawer">
           Open
         </Button>
       </div>
