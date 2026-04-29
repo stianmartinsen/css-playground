@@ -1,0 +1,27 @@
+@keyframes view-transition-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes view-transition-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+::view-transition-old(root) {
+  animation-name: view-transition-fade-out;
+  animation-duration: 1s;
+}
+
+::view-transition-new(root) {
+  animation-name: view-transition-fade-in;
+  animation-duration: 1s;
+}

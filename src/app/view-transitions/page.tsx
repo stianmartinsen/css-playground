@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { IsSticky } from "./is-sticky";
 
 /* eslint-disable @next/next/no-img-element */
 export default function ViewTransitionsPage() {
@@ -55,17 +54,14 @@ export default function ViewTransitionsPage() {
             </p>
 
             {/* Tags */}
-            <IsSticky
+            <div
               className={classNames(
                 // Base styles
-                "flex flex-wrap gap-2 mb-8 sticky top-0 bg-transparent -mx-6 sm:-mx-10 px-6 sm:px-10 py-4 z-10 overflow-auto whitespace-nowrap",
-
-                // Sticky styles
-                "data-sticky:flex-nowrap! data-sticky:bg-white",
+                "flex flex-wrap gap-2 mb-8 bg-transparent -mx-6 sm:-mx-10 px-6 sm:px-10 py-4 z-10 overflow-auto whitespace-nowrap",
               )}
             >
               <span
-                className="px-3 py-1 bg-blue-100 text-blue-800 font-medium rounded-full [view-transition-name:tag1] animate-fade-in"
+                className="px-3 py-1 bg-blue-100 text-blue-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -74,7 +70,7 @@ export default function ViewTransitionsPage() {
                 CSS
               </span>
               <span
-                className="px-3 py-1 bg-green-100 text-green-800 font-medium rounded-full [view-transition-name:tag2] animate-fade-in"
+                className="px-3 py-1 bg-green-100 text-green-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -83,7 +79,7 @@ export default function ViewTransitionsPage() {
                 Web Animations
               </span>
               <span
-                className="px-3 py-1 bg-purple-100 text-purple-800 font-medium rounded-full [view-transition-name:tag3] animate-fade-in"
+                className="px-3 py-1 bg-purple-100 text-purple-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -92,7 +88,7 @@ export default function ViewTransitionsPage() {
                 Frontend
               </span>
               <span
-                className="px-3 py-1 bg-orange-100 text-orange-800 font-medium rounded-full [view-transition-name:tag5] animate-fade-in"
+                className="px-3 py-1 bg-orange-100 text-orange-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -101,7 +97,7 @@ export default function ViewTransitionsPage() {
                 Modern CSS
               </span>
               <span
-                className="px-3 py-1 bg-red-100 text-red-800 font-medium rounded-full [view-transition-name:tag6] animate-fade-in"
+                className="px-3 py-1 bg-red-100 text-red-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -110,7 +106,7 @@ export default function ViewTransitionsPage() {
                 JavaScript
               </span>
               <span
-                className="px-3 py-1 bg-indigo-100 text-indigo-800 font-medium rounded-full [view-transition-name:tag7] animate-fade-in"
+                className="px-3 py-1 bg-indigo-100 text-indigo-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -119,7 +115,7 @@ export default function ViewTransitionsPage() {
                 Performance
               </span>
               <span
-                className="px-3 py-1 bg-pink-100 text-pink-800 font-medium rounded-full [view-transition-name:tag8] animate-fade-in"
+                className="px-3 py-1 bg-pink-100 text-pink-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -128,7 +124,7 @@ export default function ViewTransitionsPage() {
                 UX/UI
               </span>
               <span
-                className="px-3 py-1 bg-teal-100 text-teal-800 font-medium rounded-full [view-transition-name:tag9] animate-fade-in"
+                className="px-3 py-1 bg-teal-100 text-teal-800 font-medium rounded-full"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -137,7 +133,7 @@ export default function ViewTransitionsPage() {
                 React
               </span>
               <span
-                className="px-3 py-1 bg-yellow-100 text-yellow-800 font-medium rounded-full [view-transition-name:tag10] animate-fade-in"
+                className="px-3 py-1 bg-yellow-100 text-yellow-800 font-medium rounded-full "
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -146,7 +142,7 @@ export default function ViewTransitionsPage() {
                 Next.js
               </span>
               <span
-                className="px-3 py-1 bg-gray-100 text-gray-800 font-medium rounded-full [view-transition-name:tag11] animate-fade-in"
+                className="px-3 py-1 bg-gray-100 text-gray-800 font-medium rounded-full "
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -155,7 +151,7 @@ export default function ViewTransitionsPage() {
                 Responsive Design
               </span>
               <span
-                className="px-3 py-1 bg-cyan-100 text-cyan-800 font-medium rounded-full [view-transition-name:tag12] animate-fade-in"
+                className="px-3 py-1 bg-cyan-100 text-cyan-800 font-medium rounded-full "
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
@@ -163,7 +159,7 @@ export default function ViewTransitionsPage() {
               >
                 Browser APIs
               </span>
-            </IsSticky>
+            </div>
 
             {/* Article Content */}
             <div className="prose prose-lg prose-gray max-w-none">
