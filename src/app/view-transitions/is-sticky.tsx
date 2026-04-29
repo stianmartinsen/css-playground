@@ -19,18 +19,20 @@ export function IsSticky({
         entries.forEach((entry) => {
           if (entry.target === sentinelRef.current) {
             if (!entry.isIntersecting) {
-              document.startViewTransition(() => {
+              // @ts-ignore
+              contentRef.current?.startViewTransition(() => {
                 contentRef.current?.setAttribute("data-sticky", "true");
               });
             } else {
-              document.startViewTransition(() => {
+              // @ts-ignore
+              contentRef.current?.startViewTransition(() => {
                 contentRef.current?.removeAttribute("data-sticky");
               });
             }
           }
         });
       },
-      { threshold: [0] }
+      { threshold: [0] },
     );
 
     observer.observe(sentinelRef.current);

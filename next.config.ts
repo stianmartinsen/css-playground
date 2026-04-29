@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    ignoreIssue: [
+      {
+        path: "src/app/globals.css",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

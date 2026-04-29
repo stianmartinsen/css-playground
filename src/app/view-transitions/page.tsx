@@ -5,43 +5,6 @@ import { IsSticky } from "./is-sticky";
 export default function ViewTransitionsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">Blog</h1>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Articles
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Contact
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Article Header */}
@@ -95,10 +58,10 @@ export default function ViewTransitionsPage() {
             <IsSticky
               className={classNames(
                 // Base styles
-                "flex flex-wrap gap-2 mb-8 sticky top-0 bg-white -mx-6 sm:-mx-10 px-6 sm:px-10 py-4 z-10 overflow-auto whitespace-nowrap",
+                "flex flex-wrap gap-2 mb-8 sticky top-0 bg-transparent -mx-6 sm:-mx-10 px-6 sm:px-10 py-4 z-10 overflow-auto whitespace-nowrap",
 
                 // Sticky styles
-                "data-sticky:!flex-nowrap"
+                "data-sticky:flex-nowrap! data-sticky:bg-white",
               )}
             >
               <span
@@ -174,7 +137,7 @@ export default function ViewTransitionsPage() {
                 React
               </span>
               <span
-                className="px-3 py-1 bg-yellow-100 text-yellow-800 font-medium rounded-full [view-transition-name:tag10 animate-fade-in"
+                className="px-3 py-1 bg-yellow-100 text-yellow-800 font-medium rounded-full [view-transition-name:tag10] animate-fade-in"
                 style={{
                   animationRange: "entry 0% entry 100%",
                   animationTimeline: "view(inline)",
